@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baconian Cipher Encoder/Decoder</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      max-width: 800px;
+      margin-top: 50px;
+    }
+    .form-control {
+      resize: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="text-center mb-4">Baconian Cipher Encoder/Decoder</h1>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="text-center">Encode</h2>
+      <textarea id="inputText" class="form-control mb-3" placeholder="Enter text to encode..." rows="5"></textarea>
+      <button id="encodeBtn" class="btn btn-primary btn-block">Encode</button>
+      <textarea id="encodedText" class="form-control mt-3" placeholder="Encoded text will appear here..." rows="5" readonly></textarea>
+      <button id="copyEncodedBtn" class="btn btn-success btn-block mt-3">Copy Encoded Text</button>
+    </div>
+    <div class="col-md-6">
+      <h2 class="text-center">Decode</h2>
+      <textarea id="encodedInput" class="form-control mb-3" placeholder="Enter encoded text..." rows="5"></textarea>
+      <button id="decodeBtn" class="btn btn-primary btn-block">Decode</button>
+      <textarea id="decodedText" class="form-control mt-3" placeholder="Decoded text will appear here..." rows="5" readonly></textarea>
+      <button id="copyDecodedBtn" class="btn btn-success btn-block mt-3">Copy Decoded Text</button>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <h3 class="text-center">Encryption Table</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Letter</th>
+            <th>Baconian Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td>AAAAA</td></tr>
+          <tr><td>B</td><td>AAAAB</td></tr>
+          <tr><td>C</td><td>AAABA</td></tr>
+          <tr><td>D</td><td>AAABB</td></tr>
+          <tr><td>E</td><td>AABAA</td></tr>
+          <tr><td>F</td><td>AABAB</td></tr>
+          <tr><td>G</td><td>AABBA</td></tr>
+          <tr><td>H</td><td>AABBB</td></tr>
+          <tr><td>I</td><td>ABAAA</td></tr>
+          <tr><td>J</td><td>ABAAB</td></tr>
+          <tr><td>K</td><td>ABABA</td></tr>
+          <tr><td>L</td><td>ABABB</td></tr>
+          <tr><td>M</td><td>ABBAA</td></tr>
+          <tr><td>N</td><td>ABBAB</td></tr>
+          <tr><td>O</td><td>ABBBA</td></tr>
+          <tr><td>P</td><td>ABBBB</td></tr>
+          <tr><td>Q</td><td>BAAAA</td></tr>
+          <tr><td>R</td><td>BAAAB</td></tr>
+          <tr><td>S</td><td>BAABA</td></tr>
+          <tr><td>T</td><td>BAABB</td></tr>
+          <tr><td>U</td><td>BABAA</td></tr>
+          <tr><td>V</td><td>BABAB</td></tr>
+          <tr><td>W</td><td>BABBA</td></tr>
+          <tr><td>X</td><td>BABBB</td></tr>
+          <tr><td>Y</td><td>BBAAA</td></tr>
+          <tr><td>Z</td><td>BBAAB</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <h3 class="text-center">Decryption Table</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Baconian Code</th>
+            <th>Letter</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>AAAAA</td><td>A</td></tr>
+          <tr><td>AAAAB</td><td>B</td></tr>
+          <tr><td>AAABA</td><td>C</td></tr>
+          <tr><td>AAABB</td><td>D</td></tr>
+          <tr><td>AABAA</td><td>E</td></tr>
+          <tr><td>AABAB</td><td>F</td></tr>
+          <tr><td>AABBA</td><td>G</td></tr>
+          <tr><td>AABBB</td><td>H</td></tr>
+          <tr><td>ABAAA</td><td>I</td></tr>
+          <tr><td>ABAAB</td><td>J</td></tr>
+          <tr><td>ABABA</td><td>K</td></tr>
+          <tr><td>ABABB</td><td>L</td></tr>
+          <tr><td>ABBAA</td><td>M</td></tr>
+          <tr><td>ABBAB</td><td>N</td></tr>
+          <tr><td>ABBBA</td><td>O</td></tr>
+          <tr><td>ABBBB</td><td>P</td></tr>
+          <tr><td>BAAAA</td><td>Q</td></tr>
+          <tr><td>BAAAB</td><td>R</td></tr>
+          <tr><td>BAABA</td><td>S</td></tr>
+          <tr><td>BAABB</td><td>T</td></tr>
+          <tr><td>BABAA</td><td>U</td></tr>
+          <tr><td>BABAB</td><td>V</td></tr>
+          <tr><td>BABBA</td><td>W</td></tr>
+          <tr><td>BABBB</td><td>X</td></tr>
+          <tr><td>BBAAA</td><td>Y</td></tr>
+          <tr><td>BBAAB</td><td>Z</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+  // JavaScript code goes here
+</script>
+</body>
+</html>

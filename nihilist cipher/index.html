@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nihilist Cipher Encoder and Decoder</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .heading {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff;
+            text-transform: uppercase;
+        }
+        .card {
+            border: none;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-control {
+            font-size: 1rem;
+            border: 1px solid #ced4da;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .btn-secondary {
+            margin-bottom: 10px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .card-title {
+            color: #007bff;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        .copy-btn {
+            display: inline-block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Nihilist Cipher Encoder and Decoder</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Encoder</h2>
+                        <textarea id="encodeInput" class="form-control mb-3" placeholder="Enter text to encode..." rows="6"></textarea>
+                        <input type="text" id="encodeKey" class="form-control mb-3" placeholder="Enter key...">
+                        <button onclick="encode()" class="btn btn-primary btn-block mb-3">Encode</button>
+                        <button onclick="copyToClipboard('encodeOutput')" class="btn btn-secondary copy-btn">Copy</button>
+                        <textarea id="encodeOutput" class="form-control" placeholder="Encoded output..." rows="8" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Decoder</h2>
+                        <textarea id="decodeInput" class="form-control mb-3" placeholder="Enter text to decode..." rows="6"></textarea>
+                        <input type="text" id="decodeKey" class="form-control mb-3" placeholder="Enter key...">
+                        <button onclick="decode()" class="btn btn-primary btn-block mb-3">Decode</button>
+                        <button onclick="copyToClipboard('decodeOutput')" class="btn btn-secondary copy-btn">Copy</button>
+                        <textarea id="decodeOutput" class="form-control" placeholder="Decoded output..." rows="8" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS and Custom Script -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

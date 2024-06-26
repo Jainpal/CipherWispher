@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h1 class="card-title text-center mb-4">Caesar Cipher</h1>
+                <div class="btn-group btn-group-toggle d-flex justify-content-center mb-4" data-toggle="buttons">
+                    <label class="btn btn-primary active" id="encodeTab" onclick="showEncode()">
+                        <input type="radio" name="options" autocomplete="off"> Encode
+                    </label>
+                    <label class="btn btn-secondary" id="decodeTab" onclick="showDecode()">
+                        <input type="radio" name="options" autocomplete="off"> Decode
+                    </label>
+                </div>
+                <div id="encodeSection" class="section">
+                    <h2 class="mb-3">Encode</h2>
+                    <div class="form-group">
+                        <label for="encodeShift">Shift:</label>
+                        <input type="number" class="form-control" id="encodeShift" value="1" min="-25" max="25">
+                        <small id="encodeShiftError" class="text-danger"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="encodeInput">Input Text:</label>
+                        <textarea class="form-control" id="encodeInput" rows="4"></textarea>
+                        <small id="encodeInputError" class="text-danger"></small>
+                    </div>
+                    <button class="btn btn-primary btn-block" onclick="processText('encode')">Encode</button>
+                    <div class="form-group mt-3">
+                        <label for="encodeOutput">Encoded Text:</label>
+                        <textarea class="form-control" id="encodeOutput" rows="4" readonly></textarea>
+                    </div>
+                    <!-- Optional: Character count -->
+                    <p id="encodeCharCount" class="text-muted mb-0"></p>
+                    <button class="btn btn-outline-primary btn-block mt-3" onclick="copyToClipboard('encodeOutput')">Copy Encoded Text</button>
+                </div>
+                <div id="decodeSection" class="section" style="display: none;">
+                    <h2 class="mb-3">Decode</h2>
+                    <div class="form-group">
+                        <label for="decodeShift">Shift:</label>
+                        <input type="number" class="form-control" id="decodeShift" value="1" min="-25" max="25">
+                        <small id="decodeShiftError" class="text-danger"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="decodeInput">Input Text:</label>
+                        <textarea class="form-control" id="decodeInput" rows="4"></textarea>
+                        <small id="decodeInputError" class="text-danger"></small>
+                    </div>
+                    <button class="btn btn-secondary btn-block" onclick="processText('decode')">Decode</button>
+                    <div class="form-group mt-3">
+                        <label for="decodeOutput">Decoded Text:</label>
+                        <textarea class="form-control" id="decodeOutput" rows="4" readonly></textarea>
+                    </div>
+                    <!-- Optional: Character count -->
+                    <p id="decodeCharCount" class="text-muted mb-0"></p>
+                    <button class="btn btn-outline-secondary btn-block mt-3" onclick="copyToClipboard('decodeOutput')">Copy Decoded Text</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
